@@ -1,5 +1,6 @@
 @extends('layouts.dash')
 @include('dashboard.partials.menu')
+@include('dashboard.partials.nav-primary')
 @section('content')
     <section>
         <h1>Dashboard</h1>
