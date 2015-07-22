@@ -1,7 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: juliengeorget
- * Date: 20/07/15
- * Time: 17:16
- */
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body>
+
+@yield('content')
+
+</body>
+</html>

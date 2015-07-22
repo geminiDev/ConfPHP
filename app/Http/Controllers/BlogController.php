@@ -25,7 +25,7 @@ class BlogController extends Controller
         return view('Blog.single', compact('posts','comments'));
     }
     public function createToMail(){
-        return view('Blog.contact');
+        return view('blog.contact');
     }
 
 }
