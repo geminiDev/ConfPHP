@@ -1,7 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: juliengeorget
- * Date: 20/07/15
- * Time: 17:17
- */
+@extends('layouts.dash');
+
+@section('content')
+    <section>
+        <div>
+
+
+
+        </div>
+    </section>
+@endsection

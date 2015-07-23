@@ -1,11 +1,13 @@
 @extends('layouts.master')
 @section('content')
     <section id="post">
-        <article class="news">
-            @if($posts)
-                @foreach($posts as $post)
+
+        @if($posts)
+            @foreach($posts as $post)
+                <article class="news">
                     <h2 class="link-post"><a href="{{url('/single/'.$post->id)}}">{{$post->title}}</a></h2>
                     <img class="left" src="/img/update/{{$post->thumbnail_link}}" alt=""/>
+
                     <div class="excerpt">
                         <p class="abstract">{{$post->excerpt}}</p>
 
@@ -24,8 +26,9 @@
                     <div class="dateConf">
                         <h3 class="date">DEBUT : {{$post->date_start}} FIN : {{$post->date_end}}</h3>
                     </div>
-                @endforeach
-            @endif
-        </article>
+                </article>
+            @endforeach
+        @endif
+
     </section>
 @endsection

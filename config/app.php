@@ -149,6 +149,9 @@ return [
         \*-----------------------------------------------------------*/
         Barryvdh\Debugbar\ServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        App\Providers\MyHtmlServiceProvider::class,
+        #Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        // Beug
 
     ],
 
@@ -202,6 +205,10 @@ return [
         \*-----------------------------------------------------------*/
         'Form'      => Illuminate\Html\FormFacade::Class,
         'Html'      => Illuminate\Html\FormFacade::Class,
+        /*-----------------------------------------------------------*\
+            MyHtml
+        \*-----------------------------------------------------------*/
+        'MyHtml'    => App\Facades\MyHtml::class,
         /*-----------------------------------------------------------*\
             Services temporaire
         \*-----------------------------------------------------------*/
