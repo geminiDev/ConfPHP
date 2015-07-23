@@ -32,15 +32,15 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./public/assets/js'))
 });
 gulp.task('boiler', function () {
-    return gulp.src('./resources/assets/vendor/**/*.css')
+    return gulp.src('./resources/assets/vendor/*.css')
         .pipe(minify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./public/assets/vendor'))
 });
 gulp.task('watch', function () {
-    gulp.watch('./resources/assets/sass/**/*.scss', ['sass']);
-    gulp.watch('./resources/assets/js/*.js', ['js']);
-    gulp.watch('./resources/assets/vendor/**/*.css', ['boiler'])
+    gulp.watch('./resources/assets/sass/*.scss', ['sass']);
+    gulp.watch('./resources/assets/js/**/.js', ['js']);
+    gulp.watch('./resources/assets/vendor/*.css', ['boiler'])
 });
 
 gulp.task('default', ['watch', 'sass', 'js', 'boiler']);
