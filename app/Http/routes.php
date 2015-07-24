@@ -22,6 +22,7 @@ Route::get('contact', 'BlogController@createToMail');
     Commentaire
 \*-----------------------------------------------------------*/
 Route::resource('comment', 'CommentController');
+Route::resource('post', 'PostController');
 
 /*-----------------------------------------------------------*\
     Authentification DASHBOARD

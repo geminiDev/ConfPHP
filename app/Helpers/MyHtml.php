@@ -20,7 +20,6 @@ class MyHtml
                     continue;
                 }
                 $attr .= " $key=\"$value\" ";
-
             }
             $id = ucfirst($name);
         }
@@ -62,20 +61,20 @@ class MyHtml
         $name = "";
         $formats = "";
         $size = "";
-        $ctrlAttr=['name'=>"$name", 'sizes'=>'<em>Taille de maximum : ', 'formats'=>'<em> Formats acceptés : '];
+        $ctrlAttr=['name'=>"$name", 'sizes'=>'<em>Taille de maximum ', 'formats'=>'<em> Formats acceptés '];
         if($args){
             foreach($args as $attr => $value){
                 if(array_key_exists($attr, $ctrlAttr)){
                     $name = isset($args['name'])? $args['name'] :'';
                     $size = isset($args['sizes'])? $ctrlAttr['sizes'].''.$args['sizes'].'</em>':'';
-                    $formats = isset($args['formats'])? $ctrlAttr['formats'].''.$args['formats'].'</em>':'';
+                    $formats = isset($args['formats'])? $ctrlAttr['formats'].''.strtoupper($args['formats']).'</em>':'';
                     continue;
                 }
                 $attrs .= "$attr =\"$value\"";
             }
         }
         if($label){
-            return "<label for=\"$name\">ucfirst($title)</label><input type=\"file\" id=\"$name\" $attrs> <br/> $formats $size";
+            return "<label for=\"$name\">".ucfirst($title)." : </label><input type=\"file\" id=\"$name\" $attrs> <br/> $formats & $size";
         }
         return "<input type=\"file\" id=\"$name\" $attrs> <br/> $formats $size";
     }
