@@ -1,6 +1,4 @@
 @extends('layouts.dash')
-@include('dashboard.partials.menu')
-@include('dashboard.partials.nav-primary')
 @section('content')
     <section>
         <h1>Dashboard</h1>
@@ -37,7 +35,7 @@
                         @endforeach
                     </td>
                     <td>
-                        {!! Form::open(['url'=>'post/post->id']) !!}
+                        {!! Form::open(['url'=>'post/'.$post->id]) !!}
                         {!! Form::hidden('_method','put')!!}
                         @if($post->status =='publish')
                             {!! Form::submit('Unpublish', ['class'=>'form-control']) !!}
@@ -47,7 +45,7 @@
                         {!! Form::close()!!}
                     </td>
                     <td>
-                        {!! Form::open(['url'=>'post/post->id']) !!}
+                        {!! Form::open(['url'=>'post/'.$post->id]) !!}
                         {!! Form::hidden('_method','DELETE')!!}
                             {!! Form::submit('Supprimer', ['class'=>'form-control']) !!}
                         {!! Form::close()!!}

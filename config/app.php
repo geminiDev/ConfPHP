@@ -147,7 +147,7 @@ return [
         /*-----------------------------------------------------------*\
             Services Temporaire
         \*-----------------------------------------------------------*/
-        /*Barryvdh\Debugbar\ServiceProvider::class,*/
+        Barryvdh\Debugbar\ServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         App\Providers\MyHtmlServiceProvider::class,
         #Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
@@ -212,7 +212,7 @@ return [
         /*-----------------------------------------------------------*\
             Services temporaire
         \*-----------------------------------------------------------*/
-        /*'Debugbar' => Barryvdh\Debugbar\Facade::class,*/
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
