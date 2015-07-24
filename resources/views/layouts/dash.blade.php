@@ -21,8 +21,12 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgradeyour browser</a> to improve your experience.</p>
     <![endif]-->
 
+    @include('dashboard.includes.header')
+    @include('dashboard.partials.nav-primary')
+
     @yield('content')
 
+    @include('dashboard.includes.footer')
 
     <!----- SCRIPT PLUGINS ----->
     <script src="{{asset('assets/js/vendor/jquery-1.11.3.min.js')}}"></script>

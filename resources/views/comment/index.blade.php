@@ -20,15 +20,17 @@
         </tr>
         </tfoot>
         <tbody>
+
         @foreach($comments as $comment)
+
             <tr>
                 <td>{{$comment->status}}</td>
                 <td><a href="{{url('comment/'.$comment->id)}}">{{$comment->email}}</a></td>
-                <td>{{$comment->comment}}</td>
+                <td>{{$comment->message}}</td>
                 <td>
                     {!! Form::open(['url'=>'comment/'.$comment->id]) !!}
                     {!! Form::hidden('_method','put')!!}
-                    @if($post->status =='publish')
+                    @if($comment->status =='publish')
                         {!! Form::submit('Unpublish', ['class'=>'form-control']) !!}
                     @else
                         {!! Form::submit('Publish', ['class'=>'form-control']) !!}
