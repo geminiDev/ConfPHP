@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Post;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,7 +18,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments=Comment::all();
+        $comments=Comment::join('posts','post_id', '=', 'posts.id')->get();
         return view('comment.index',compact('comments'));
     }
 

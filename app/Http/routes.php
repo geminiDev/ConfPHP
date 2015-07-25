@@ -17,6 +17,7 @@
 Route::get('/', 'BlogController@index');
 Route::get('single/{id}', 'BlogController@showPost');
 Route::get('contact', 'BlogController@createToMail');
+Route::get('tag/{id}', 'BlogController@showPostByTag');
 
 /*-----------------------------------------------------------*\
     Commentaire

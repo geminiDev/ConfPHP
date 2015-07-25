@@ -27,5 +27,11 @@ class BlogController extends Controller
     public function createToMail(){
         return view('blog.contact');
     }
+    public function showPostByTag($id){
+        $tag= Tag::find($id);
+        $name= $tag->name;
+        $posts=$tag->posts()->get();
+        return view('Blog.tag', compact('posts', 'name'));
+    }
 
 }

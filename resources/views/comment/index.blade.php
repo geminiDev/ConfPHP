@@ -4,6 +4,7 @@
         <thead>
         <tr>
             <th>Statut</th>
+            <th>Titre du post</th>
             <th>Email</th>
             <th>Message</th>
             <th>Changer le statut</th>
@@ -13,6 +14,7 @@
         <tfoot>
         <tr>
             <th>Statut</th>
+            <th>Titre du post</th>
             <th>Email</th>
             <th>Message</th>
             <th>Changer le statut</th>
@@ -22,9 +24,9 @@
         <tbody>
 
         @foreach($comments as $comment)
-
             <tr>
                 <td>{{$comment->status}}</td>
+                <td><a href="{{url('single/'.$comment->post_id)}}">{{$comment->title}}</a>/td>
                 <td><a href="{{url('comment/'.$comment->id)}}">{{$comment->email}}</a></td>
                 <td>{{$comment->message}}</td>
                 <td>
