@@ -14,10 +14,10 @@ var path = {
         'css': './public/assets/css',
         'js': './public/assets/js'
     },
-    'watch': '.resources/assets/sass/**/*.scss'
+    'watch': '.resources/assets/sass/**/app.scss'
 };
 gulp.task('sass', function () {
-    return gulp.src('./resources/assets/sass/app.scss')
+    return gulp.src('./resources/assets/sass/**/*.scss')
         .pipe(sass({
             onError: console.error.bind(console, 'SASS ERROR')
         })) // compile le sass=> css
