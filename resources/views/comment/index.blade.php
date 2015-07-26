@@ -1,31 +1,21 @@
 @extends('layouts.dash')
 @section('content')
     <div class="table-responsive">
-        <table class="table">
+        <table class="table table-hover">
             <thead>
             <tr>
-                <th>Statut</th>
+                <th>Statut actuel</th>
                 <th>Titre du post</th>
                 <th>Email</th>
                 <th>Message</th>
-                <th>Changer le statut</th>
+                <th>Modifier le statut</th>
                 <th>Supprimer</th>
             </tr>
             </thead>
-            <tfoot>
-            <tr>
-                <th>Statut</th>
-                <th>Titre du post</th>
-                <th>Email</th>
-                <th>Message</th>
-                <th>Changer le statut</th>
-                <th>Supprimer</th>
-            </tr>
-            </tfoot>
 
-            <tbody  class="table-hover">
+            <tbody>
             @foreach($comments as $comment)
-                <tr class="row">
+                <tr>
                     <td>{{$comment->status}}</td>
                     <td><a href="{{url('single/'.$comment->post_id)}}">{{$comment->title}}</a></td>
                     <td><a href="{{url('comment/'.$comment->id)}}">{{$comment->email}}</a></td>
@@ -34,16 +24,16 @@
                         {!! Form::open(['url'=>'comment/'.$comment->id]) !!}
                         {!! Form::hidden('_method','put')!!}
                         @if($comment->status =='publish')
-                            {!! Form::submit('Unpublish', ['class'=>'form-control']) !!}
+                            {!! Form::submit('Unpublish', ['class'=>'btn btn-warning']) !!}
                         @else
-                            {!! Form::submit('Publish', ['class'=>'form-control']) !!}
+                            {!! Form::submit('Publish', ['class'=>'btn btn-warning']) !!}
                         @endif
                         {!! Form::close()!!}
                     </td>
                     <td>
                         {!! Form::open(['url'=>'comment/'.$comment->id]) !!}
                         {!! Form::hidden('_method','DELETE')!!}
-                        {!! Form::submit('Supprimer', ['class'=>'form-control']) !!}
+                        {!! Form::submit('Supprimer', ['class'=>'btn btn-danger']) !!}
                         {!! Form::close()!!}
                     </td>
                 </tr>

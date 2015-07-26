@@ -33,15 +33,15 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
-                <a href="/admin">Dashboard</a>
+                <a href="{{url('/admin')}}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
-                            class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-comments"></i> <b
+                            class="caret"></b>En Attentes</a>
                 <ul class="dropdown-menu message-dropdown">
 
                 </ul>
-            <li class="dropdown"><a href="/">Retour au site</a></li>
+            <li class="dropdown"><a href="/"><i class="fa fa-fw fa-chevron-circle-left"></i> Retour au site</a></li>
             <li class="dropdown"><a href="{{url('auth/logout')}}">Deconnexion</a></li>
             </li>
         </ul>
@@ -73,6 +73,7 @@
         </div>
         <!-- /.container-fluid -->
     </div>
+</div>
 
 <!----- SCRIPT PLUGINS ----->
 <script src="{{asset('assets/js/vendor/jquery-1.11.3.min.js')}}"></script>
@@ -82,7 +83,6 @@
 <!----- SCRIPT Perso ----->
 <script src="{{asset('assets/js/plugins.min.js')}}"></script>
 <script src="{{asset('assets/js/main.min.js')}}"></script>
-
 
 </body>
 </html>

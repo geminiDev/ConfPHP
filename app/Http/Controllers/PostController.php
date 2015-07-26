@@ -64,7 +64,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post=Post::find($id);
+        $tags=Tag::all();
+        return view('post.edit', compact('post','tags'));
     }
 
     /**
@@ -76,7 +78,8 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Post::find($id)->update($request->all());
+        return redirect()->to("post")->with('message', 'success update');
     }
 
     /**
@@ -87,6 +90,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+        return redirect()->to('post')->with('message', 'success');
     }
 }
