@@ -31,7 +31,7 @@
                     Form::text('date_end',$post->date_end,['class'=>'form-control', 'id'=>'date_end', 'required']) !!}<br/>
                 </div>
                 <fieldset class="form-control-static">
-                    {!! MyHtml::thumb('mon image',['name'=>'thumbnail_link','formats'=>'jpg, png','sizes'=>'1Mo']) !!}
+                    {!! MyHtml::thumb('mon image',['name'=>'thumbnail_link','formats'=>'jpeg,png,jpg','sizes'=>'2Mo']) !!}
                 </fieldset>
 
                 <div>
