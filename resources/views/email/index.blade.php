@@ -4,7 +4,7 @@
     <section>
         <h3>Laisser un messsage</h3>
         (*)Champs obligatoires
-        {!! Form::open(['url'=>'#'])!!}
+        {!! Form::open(['url'=>'contact'])!!}
         <div class="form-group">
             {!!Form::label('email', '(*)Email:',['for'=> 'email'])!!}<br/>
             {!!Form::email('email', old('email'), ['class'=>'form-control', 'id'=>'email', 'require'])!!}

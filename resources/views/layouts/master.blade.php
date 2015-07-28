@@ -8,8 +8,11 @@
     <meta content="Paris, France" name="geo.placename">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/vendor/normalize.min.css">
+    <link rel="stylesheet" href="{{asset('assets/vendor/normalize.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-theme.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/vendor/font-awesome.min.css')}}"/>
     <link rel="stylesheet" href="/assets/css/app.min.css">
 </head>
 <body>
@@ -21,6 +24,6 @@
     @include('blog.includes.footer')
 
 </div>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </body>
 </html>

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class CommentController extends Controller
 {
@@ -41,7 +43,16 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         Comment::create($request->all());
-        return redirect()->to('/');
+        $email = $request->input('email');
+        $comment=$request->input('message');
+        $date= Carbon::create()->format('d-m-Y H:i:s');
+        Mail::send(['text'=>'email.notifications'],compact('comment', 'email','date'), function($message) use ($email){
+            $message
+                ->to('juliengeorget@live.fr')
+                ->subject('ConfPHP - Notification commentaire')
+                ->from($email);
+        });
+        return redirect('/')->with('message', 'Email envoyé');
     }
 
     /**

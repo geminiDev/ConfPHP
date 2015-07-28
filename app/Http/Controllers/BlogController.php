@@ -9,6 +9,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
 use App\Comment;
+use Illuminate\Support\Facades\Mail;
+use YOzaz\LaravelSwiftmailer\Mailer;
 
 
 class BlogController extends Controller
@@ -23,9 +25,6 @@ class BlogController extends Controller
         $posts = Post::find($id);
         $comments = Post::find($id)->comments;
         return view('Blog.single', compact('posts','comments'));
-    }
-    public function createToMail(){
-        return view('blog.contact');
     }
     public function showPostByTag($id){
         $tag= Tag::find($id);

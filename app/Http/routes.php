@@ -16,7 +16,6 @@
 
 Route::get('/', 'BlogController@index');
 Route::get('single/{id}', 'BlogController@showPost');
-Route::get('contact', 'BlogController@createToMail');
 Route::get('tag/{id}', 'BlogController@showPostByTag');
 
 /*-----------------------------------------------------------*\
@@ -36,3 +35,8 @@ Route::controllers([
     DASHBOARD
 \*-----------------------------------------------------------*/
 Route::get('admin', 'PostController@index');
+/*-----------------------------------------------------------*\
+    Service Mail
+\*-----------------------------------------------------------*/
+Route::get('contact', 'MailController@createToMail');
+Route::post('contact', 'MailController@sendToMail');
