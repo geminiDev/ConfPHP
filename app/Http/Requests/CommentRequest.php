@@ -24,8 +24,10 @@ class CommentRequest extends Request
     public function rules()
     {
         return [
-            'email'=>'required | email',
+            'email'=>'required|email',
             'message'=>'required',
+            'id_post'=>'required'
+            //'captcha'=>'required',
         ];
     }
 }

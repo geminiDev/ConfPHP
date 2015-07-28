@@ -9,8 +9,8 @@
             {!!Form::label('email', '(*)Email:',['for'=> 'email'])!!}<br/>
             {!!Form::email('email', old('email'), ['class'=>'form-control', 'id'=>'email', 'require'])!!}
             {!! $errors->first('email', '<span class="help-block">:message</span>')!!}<br/>
-            {!!Form::label('antispam', 'Calculer la somme 5+3',['for'=> 'antispam'])!!}<br/>
-            {!!Form::text('antispam', '', ['class'=>'form-control', 'id'=>'antispam', 'require'])!!}
+            {!!Form::label('captcha', 'Calculer la somme 5+3',['for'=> 'antispam'])!!}<br/>
+            {!!Form::text('captcha', '', ['class'=>'form-control', 'id'=>'antispam', 'require'])!!}
         </div>
         {!!Form::label('message', '(*)Commentaire : ')!!}<br/>
         {!!Form::textarea('message', '', ['cols'=>30, 'rows'=>10, 'class'=>'form-control'])!!}

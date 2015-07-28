@@ -24,12 +24,9 @@ class MailRequest extends Request
     public function rules()
     {
         return [
-            'email'=>'required | email',
-            'title'=>'required | email',
-            'content'=>'required | email',
-            'date_start'=>'required | email',
-            'date_end'=>'required | email',
-            'url_site'=>'required',
+            'email'=>'required|email',
+            'message'=>'required',
+            //'captcha'=>'required',
         ];
     }
 }

@@ -48,7 +48,7 @@ class CommentController extends Controller
         $date= Carbon::create()->format('d-m-Y H:i:s');
         Mail::send(['text'=>'email.notifications'],compact('comment', 'email','date'), function($message) use ($email){
             $message
-                ->to('juliengeorget@live.fr')
+                ->to(env('EMAIL_ADMIN'))
                 ->subject('ConfPHP - Notification commentaire')
                 ->from($email);
         });
