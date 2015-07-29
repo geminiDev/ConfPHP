@@ -40,9 +40,9 @@
                             {!! Form::open(['url'=>'post/'.$post->id]) !!}
                             {!! Form::hidden('_method','put')!!}
                             @if($post->status =='publish')
-                                {!! Form::submit('Unpublish', ['class'=>'btn btn-warning']) !!}
+                                {!! Form::submit('unpublish', ['class'=>'btn btn-warning', 'name'=>'status']) !!}
                             @else
-                                {!! Form::submit('Publish', ['class'=>'btn btn-warning']) !!}
+                                {!! Form::submit('publish', ['class'=>'btn btn-warning', 'name'=>'status']) !!}
                             @endif
                             {!! Form::close()!!}
                         </td>
