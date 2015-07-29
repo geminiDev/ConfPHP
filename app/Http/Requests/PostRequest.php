@@ -32,7 +32,7 @@ class PostRequest extends Request
             'link_thumbnail'=>'mimes:jpeg,png,jpg',
             'size'=>'2000',
             'url_site'=>'required',
-
+            'tag_id'=>'required',
         ];
     }
 }

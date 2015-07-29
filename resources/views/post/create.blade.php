@@ -45,7 +45,7 @@
                         <ul>
                             @foreach($tags as $tag)
                                 {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
-                                {!!Form::checkbox('tag_id', $tag->id,false,['title'=> $tag->name])!!}
+                                {!!Form::checkbox('tag_id[]', $tag->id,false,['title'=> $tag->name])!!}
                             @endforeach
                         </ul>
                     @endif
