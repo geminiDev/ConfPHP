@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Tag;
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use \Intervention\Image\ImageManagerStatic;
 
 class PostController extends Controller
 {
@@ -51,38 +54,20 @@ class PostController extends Controller
         $request->merge($args);
         $allRequest=$request->all();
         $post = Post::create($allRequest);
-        /*$post = new Post();
-        $post->title='dimanche';
-        $post->slug = 'Samedi';
-        $post->content = 'lorem';
-        $post->status = 'publish';
-        $post->save();*/
+
         foreach($allRequest['tag_id'] as $value){
             $post->tags()->attach($value);
         }
-
-            //$post = Post::create($request->all());
-        // Si j'ai une image
-        if($request->hasFile('thumbnail')){
-            // Je récupère l'image
-            $file=$request->file('thumbnail');
-            // je récupere l'extension
-            $ext=$file->getClientOriginalExtension();
-            // Je crée un nouveau nom de 12 caractere aléatoire
-            $fileName= str_random(12).'.'.$ext;
-            // Je déplace le fichier avec son nouveau nom
-            // public_path('upload') si pb de chemin essayer cette solution.
-            $file->move('./uploads', $fileName);
-            // UPDATE de l'objet Model la methode sav en base la valeur
-            // updated
-            $post->link_thumbnail = $fileName;
+        if(Input::file()){
+            $image = Input::file('thumbnail_link');
+            $ext=$image->getClientOriginalExtension();
+            $fileName= $args['slug'].str_random(3).'.'.$ext;
+            $path = public_path('img/update/'.$fileName);
+            ImageManagerStatic::make($image->getRealPath())->resize(200,200)->save($path);
+            $post->thumbnail_link = $fileName;
             $post->save();
         }
         return redirect()->to('post');
-
-
-
-
     }
 
     /**

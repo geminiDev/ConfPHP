@@ -145,6 +145,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         YOzaz\LaravelSwiftmailer\ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         /*-----------------------------------------------------------*\
             Services Temporaire
         \*-----------------------------------------------------------*/
@@ -206,6 +207,7 @@ return [
         \*-----------------------------------------------------------*/
         'Form' => Illuminate\Html\FormFacade::Class,
         'Html' => Illuminate\Html\FormFacade::Class,
+        'Image'=> Intervention\Image\Facades\Image::class,
         /*-----------------------------------------------------------*\
             MyHtml
         \*-----------------------------------------------------------*/

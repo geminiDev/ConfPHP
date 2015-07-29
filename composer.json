@@ -11,7 +11,8 @@
         "illuminate/html": "dev-master",
         "barryvdh/laravel-ide-helper": "^2.0",
         "yozaz/laravel-swiftmailer": "~3.0",
-        "guzzlehttp/guzzle": "~5.0"
+        "guzzlehttp/guzzle": "~5.0",
+        "intervention/image": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

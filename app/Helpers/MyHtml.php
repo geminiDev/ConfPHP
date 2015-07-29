@@ -75,9 +75,9 @@ class MyHtml
             }
         }
         if ($label) {
-            return "<label for=\"$name\">" . ucfirst($title) . " : </label><input type=\"file\" id=\"$name\" $attrs> <br/> $formats & $size";
+            return "<label for=\"$name\">" . ucfirst($title) . " : </label><input type=\"file\" id=\"$name\" name=\"$name\" $attrs /> <br/> $formats & $size";
         }
-        return "<input type=\"file\" id=\"$name\" $attrs> <br/> $formats $size";
+        return "<input type=\"file\" id=\"$name\" name=\"$name\" $attrs /> <br> $formats $size";
     }
 
 }
