@@ -112,8 +112,12 @@ class PostController extends Controller
         $request->merge($args);
         $allRequest = $request->all();
         $post = Post::find($id);
-        foreach ($allRequest['tag_id'] as $value) {
-            $post->tags()->attach($value);
+        if (isset($allRequest['tag_id'])) {
+
+            DB::table('post_tag')->where('post_id', $id)->delete();
+            foreach ($allRequest['tag_id'] as $value) {
+                $post->tags()->attach($value);
+            }
         }
         $post->update($allRequest);
         if (Input::file()) {
@@ -148,6 +152,7 @@ class PostController extends Controller
     public function changeToStatus(StatusRequest $request, $id)
     {
         Post::find($id)->update($request->all());
+
         return redirect()->to('post')->with('message', 'success update');
     }
 }
