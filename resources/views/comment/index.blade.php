@@ -24,9 +24,9 @@
                         {!! Form::open(['url'=>'comment/'.$comment->id]) !!}
                         {!! Form::hidden('_method','put')!!}
                         @if($comment->status =='publish')
-                            {!! Form::submit('Unpublish', ['class'=>'btn btn-warning']) !!}
+                            {!! Form::submit('unpublish', ['class'=>'btn btn-warning', 'name'=>'status']) !!}
                         @else
-                            {!! Form::submit('Publish', ['class'=>'btn btn-warning']) !!}
+                            {!! Form::submit('publish', ['class'=>'btn btn-warning', 'name'=>'status']) !!}
                         @endif
                         {!! Form::close()!!}
                     </td>

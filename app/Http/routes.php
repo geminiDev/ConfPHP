@@ -19,7 +19,7 @@ Route::get('single/{id}', 'BlogController@showPost');
 Route::get('tag/{id}', 'BlogController@showPostByTag');
 
 /*-----------------------------------------------------------*\
-    Commentaire
+    Controller de RESTfull
 \*-----------------------------------------------------------*/
 Route::resource('comment', 'CommentController');
 Route::resource('post', 'PostController');
@@ -35,6 +35,7 @@ Route::controllers([
     DASHBOARD
 \*-----------------------------------------------------------*/
 Route::get('admin', 'PostController@index');
+Route::put('status/{id}', 'PostController@changeToStatus');
 /*-----------------------------------------------------------*\
     Service Mail
 \*-----------------------------------------------------------*/

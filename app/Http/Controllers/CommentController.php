@@ -6,8 +6,8 @@ use App\Comment;
 use App\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Http\Requests\CommentRequest;
+use App\Http\Requests\StatusRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,8 +20,15 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments=Comment::join('posts','post_id', '=', 'posts.id')->get();
-        return view('comment.index',compact('comments'));
+        $comments = Comment::join('posts', 'post_id', '=', 'posts.id')
+            ->select('comments.id',
+            'comments.post_id',
+                'comments.email',
+            'comments.message',
+            'posts.title',
+            'comments.status')
+            ->get();
+        return view('comment.index', compact('comments'));
     }
 
     /**
@@ -37,16 +44,16 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(CommentRequest $request)
     {
         Comment::create($request->all());
         $email = $request->input('email');
-        $comment=$request->input('message');
-        $date= Carbon::create()->format('d-m-Y H:i:s');
-        Mail::send(['text'=>'email.notifications'],compact('comment', 'email','date'), function($message) use ($email){
+        $comment = $request->input('message');
+        $date = Carbon::create()->format('d-m-Y H:i:s');
+        Mail::send(['text' => 'email.notifications'], compact('comment', 'email', 'date'), function ($message) use ($email) {
             $message
                 ->to(env('EMAIL_ADMIN'))
                 ->subject('ConfPHP - Notification commentaire')
@@ -58,7 +65,7 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
@@ -69,32 +76,33 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function edit($id)
     {
-        $comment=Comment::find($id);
+        $comment = Comment::find($id);
         return view('comment.edit', compact('comment'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
+     * @param  Request $request
+     * @param  int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(StatusRequest $request, $id)
     {
         Comment::find($id)->update($request->all());
+
         return redirect()->to('comment')->with('message', 'success update');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function destroy($id)

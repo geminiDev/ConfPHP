@@ -10,6 +10,7 @@ class Comment extends Model
         'email',
         'message',
         'post_id',
+        'status',
     ];
 
     public function posts()

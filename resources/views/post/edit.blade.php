@@ -12,7 +12,7 @@
 
             @else
                 <h2>Créer votre post :</h2>
-                {!! Form::open(['url'=>'post', 'method'=> 'post', 'files'=>true]) !!}
+                {!! Form::open(['url'=>'post/'.$post->id, 'files'=>true]) !!}
                 {!! Form::hidden('_method','put')!!}
                 <div>
                     {!! Form::label('title', 'Titre :',['for'=> 'title']) !!}<br/>
@@ -48,8 +48,8 @@
                     <strong>Tags de l'article :</strong>
                     <ul>
                         @foreach($tags as $tag)
-                                {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
-                                {!!Form::checkbox('tag_id', $tag->id,false,['title'=> $tag->name])!!}
+                            {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
+                            {!!Form::checkbox('tag_id[]', $tag->id,false,['title'=> $tag->name])!!}
                         @endforeach
                     </ul>
                 </div>

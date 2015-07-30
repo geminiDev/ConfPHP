@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CommentRequest extends Request
+class StatusRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,7 @@ class CommentRequest extends Request
     public function rules()
     {
         return [
-            'email'=>'required|email',
-            'message'=>'required',
-            'id_post'=>'required',
-            //'captcha'=>'required',
+            'status'=>'required',
         ];
     }
 }

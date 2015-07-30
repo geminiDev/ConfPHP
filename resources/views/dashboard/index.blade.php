@@ -2,7 +2,6 @@
 @section('content')
     <section>
         <h1>Dashboard</h1>
-
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
@@ -37,7 +36,7 @@
                             @endforeach
                         </td>
                         <td>
-                            {!! Form::open(['url'=>'post/'.$post->id]) !!}
+                            {!! Form::open(['url'=>'status/'.$post->id]) !!}
                             {!! Form::hidden('_method','put')!!}
                             @if($post->status =='publish')
                                 {!! Form::submit('unpublish', ['class'=>'btn btn-warning', 'name'=>'status']) !!}
@@ -57,6 +56,5 @@
                 </tbody>
             </table>
         </div>
-
     </section>
 @endsection
