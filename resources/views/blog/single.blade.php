@@ -31,7 +31,7 @@
             {!!Form::label('message', 'Commentaire : ')!!}<br/>
             {!!Form::textarea('message', '', ['cols'=>30, 'rows'=>10, 'class'=>'form-control'])!!}
             {!! $errors->first('message', '<span class="help-block">:message</span>')!!}
-            {!! Form::hidden('id_post', $posts->id, ['name'=>'post_id']) !!}
+            {!! Form::hidden('post_id', $posts->id, ['name'=>'post_id']) !!}
             <p>{!! Form::submit('Valider', ['class'=>'btn btn-primary']) !!}</p>
             {!! Form::close() !!}
         </div>

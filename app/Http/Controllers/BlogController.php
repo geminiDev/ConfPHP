@@ -16,8 +16,7 @@ use YOzaz\LaravelSwiftmailer\Mailer;
 class BlogController extends Controller
 {
     public function index(){
-        $posts = Post::all();
-        $comments= Comment::all();
+        $posts= Post::published()->get()->sortBy('date_start');
         $tags = Tag::all();
         return view('blog.index', compact('posts', 'comments','tags'));
     }

@@ -26,7 +26,7 @@ class CommentRequest extends Request
         return [
             'email'=>'required|email',
             'message'=>'required',
-            'id_post'=>'required',
+            'post_id'=>'required',
             //'captcha'=>'required',
         ];
     }

@@ -21,7 +21,7 @@
                         @endforeach
                     </div>
                     <div class="numberComment">
-                        <p><strong>Nombre de commentaire</strong> {{ count($post->comments) }}</p>
+                        <p><strong>Nombre de commentaire</strong> {{ count($post->displayComments()) }}</p>
                     </div>
                     <div class="dateConf">
                         <h3 class="date">DEBUT : {{$post->date_start}} FIN : {{$post->date_end}}</h3>

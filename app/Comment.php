@@ -11,6 +11,7 @@ class Comment extends Model
         'message',
         'post_id',
         'status',
+
     ];
 
     public function posts()
