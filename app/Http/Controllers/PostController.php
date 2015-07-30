@@ -22,6 +22,9 @@ class PostController extends Controller
      *
      * @return Response
      */
+    public function __constuct(){
+        $this->middleware('auth', ['only'=>['show', 'index','create']]);
+    }
     public function index()
     {
         $posts = Post::all();

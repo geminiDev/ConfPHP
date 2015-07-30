@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Mail;
 
 class CommentController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['store']]);
+    }
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
+
     public function index()
     {
         $comments = Comment::join('posts', 'post_id', '=', 'posts.id')
@@ -81,8 +87,7 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        $comment = Comment::find($id);
-        return view('comment.edit', compact('comment'));
+        //
     }
 
     /**
