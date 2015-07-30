@@ -31,5 +31,11 @@ class BlogController extends Controller
         $posts=$tag->posts()->get();
         return view('Blog.tag', compact('posts', 'name'));
     }
+    public function noticesPage(){
+        return view('Blog.notices');
+    }
+    public function aboutPage(){
+        return view('Blog.notices');
+    }
 
 }

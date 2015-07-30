@@ -17,6 +17,8 @@
 Route::get('/', 'BlogController@index');
 Route::get('single/{id}', 'BlogController@showPost');
 Route::get('tag/{id}', 'BlogController@showPostByTag');
+Route::get('mentions', 'BlogController@noticesPage');
+Route::get('about', 'BlogController@aboutPage');
 
 /*-----------------------------------------------------------*\
     Controller de RESTfull
