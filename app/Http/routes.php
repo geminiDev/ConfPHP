@@ -28,8 +28,6 @@ Route::get('about', 'BlogController@aboutPage');
     Controller de RESTfull
 \*-----------------------------------------------------------*/
 Route::resource('comment', 'CommentController');
-Route::resource('post', 'PostController');
-
 /*-----------------------------------------------------------*\
     Authentification DASHBOARD
 \*-----------------------------------------------------------*/
@@ -40,10 +38,14 @@ Route::controllers([
 /*-----------------------------------------------------------*\
     DASHBOARD
 \*-----------------------------------------------------------*/
-Route::get('admin', 'PostController@index');
 Route::put('status/{id}', 'PostController@changeToStatus');
 /*-----------------------------------------------------------*\
     Service Mail
 \*-----------------------------------------------------------*/
 Route::get('contact', 'MailController@createToMail');
 Route::post('contact', 'MailController@sendToMail');
+
+Route::group(['middleware'=>'auth'], function(){
+    Route::resource('post', 'PostController');
+    Route::get('admin', 'PostController@index');
+});

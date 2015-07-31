@@ -22,7 +22,7 @@ class BlogController extends Controller
     }
     public function showPost($id){
         $posts = Post::find($id);
-        $comments = Post::find($id)->comments;
+        $comments = Post::find($id)->comments->where('comments.id','publish');
         return view('Blog.single', compact('posts','comments'));
     }
     public function showPostByTag($id){
