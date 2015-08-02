@@ -1,7 +1,6 @@
 @extends('layouts.master')
-@include('blog.partials.menu')
 @section('content')
-    <section>
+    <section class="post">
         <h3>Laisser un messsage</h3>
         (*)Champs obligatoires
         {!! Form::open(['url'=>'contact'])!!}

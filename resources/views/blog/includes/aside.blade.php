@@ -1,5 +1,5 @@
 <aside id="sidebar">
-    <h2>Sporsors</h2>
+    <h2>Sponsors</h2>
     <figure >
         <a href="http://www.elao.com/fr/"><img src="/img/aside/elao_logo_150px.png" alt="logo du sponsor Elao"/></a>
         <a href="http://www.zol.fr/"><img src="/img/aside/zol-logo.png" alt="logo du sponsor Zol"/></a>

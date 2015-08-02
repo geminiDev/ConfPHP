@@ -4,15 +4,19 @@
         <article class="news">
             @if($posts)
 
-                <h2 class="link-post">{{$posts->title}}</h2>
+                <h2>{{$posts->title}}</h2>
                 <img class="left" src="/img/update/{{$posts->thumbnail_link}}" alt=""/>
-
                 <div class="excerpt">
                     <p>{{$posts->content}}</p>
 
                     <p><a class="link-outside" href="{{$posts->url_site}}">Site web de la conférence</a></p>
                 </div>
-                <span class="link-keyword"><strong>Mots clefs :</strong> </span>
+                <span class="link-keyword"><strong>Mots clefs :</strong>
+                    @foreach($posts->tags as $tag)
+                        <a href="{{url('tag/'.$tag->id)}}">{{ucfirst($tag->name)}}</a>
+                    @endforeach
+
+                </span>
                 <div class="dateConf">
                     <h3 class="date">DEBUT : {{$posts->date_start}} FIN : {{$posts->date_end}}</h3>
                 </div>

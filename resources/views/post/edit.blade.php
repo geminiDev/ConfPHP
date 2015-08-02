@@ -26,12 +26,15 @@
                 </div>
                 <div>
                     {!! Form::label('date_start', 'Date de début :',['for'=> 'date_start']) !!}{!!
-                    Form::text('date_start',$post->date_start,['class'=>'form-control', 'id'=>'date_start', 'required']) !!}<br/>
+                    Form::text('date_start',$post->date_start,['class'=>'form-control', 'id'=>'date_start', 'required'])
+                    !!}<br/>
                     {!! Form::label('date_end', 'Date de fin :',['for'=> 'date_end']) !!}{!!
-                    Form::text('date_end',$post->date_end,['class'=>'form-control', 'id'=>'date_end', 'required']) !!}<br/>
+                    Form::text('date_end',$post->date_end,['class'=>'form-control', 'id'=>'date_end', 'required'])
+                    !!}<br/>
                 </div>
                 <fieldset class="form-control-static">
-                    {!! MyHtml::thumb('mon image',['name'=>'thumbnail_link','formats'=>'jpeg,png,jpg','sizes'=>'2Mo']) !!}
+                    {!! MyHtml::thumb('mon image',['name'=>'thumbnail_link','formats'=>'jpeg,png,jpg','sizes'=>'2Mo'])
+                    !!}
                 </fieldset>
 
                 <div>
@@ -47,12 +50,21 @@
                 <div class="form-control-static">
                     <strong>Tags de l'article :</strong>
                     <ul>
+
                         @foreach($tags as $tag)
-                            {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
-                            {!!Form::checkbox('tag_id[]', $tag->id,false,['title'=> $tag->name])!!}
+                            @if(in_array($tag->id, $post->displayTags()))
+                                {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
+                                {!!Form::checkbox('tag_id[]', $tag->id,['title'=> $tag->name])!!}
+                            @else
+                                {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
+                                {!!Form::checkbox('tag_id[]', $tag->id,false,['title'=> $tag->name])!!}
+                            @endif
                         @endforeach
                     </ul>
                 </div>
+
+
+
                 <p>{!! Form::submit('Valider', ['class'=>'btn btn-primary btn-lg']) !!}</p>
                 {!! Form::close() !!}
             @endif

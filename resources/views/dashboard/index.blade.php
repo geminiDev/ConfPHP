@@ -1,6 +1,6 @@
 @extends('layouts.dash')
 @section('content')
-    <section>
+    <section class="dash-page">
         <h1>Dashboard</h1>
         <div class="table-responsive">
             <table class="table table-hover">

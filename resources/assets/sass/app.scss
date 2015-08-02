@@ -6,14 +6,28 @@ body{
   font-family: 'Cousine' ;
   background-image: linear-gradient(to bottom, #8DD0DB 0%, #ACDEE3 40%, #ACDEE3 100%);
   color: #1C5E64;
-  font-size: 0.8em;
+  font-size: 1.5em;
   line-height: 1.5;
+}
+.excerpt{
+  width: 70rem;
+}
+.excerpt > p{
+  padding-left: 1rem;
 }
 
 /*liens du site*/
-.link, .link-post, .link-keyword a, .link-outside{
+.link, .link-post, .link-keyword a, .link-outside
+{
   color: #E66067;
   text-decoration: none;
+}
+.numberComment>p{
+  padding: 2rem 0;
+}
+.excerpt>p a{
+  padding: 2rem 0;
+  clear: both;
 }
 
 .link-keyword{
@@ -21,16 +35,17 @@ body{
   clear:both;
 }
 
+
 .link-post:hover{
   color: rgba(0, 0, 0, 0.40);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /*titres du site*/
 h2 {
   color: #E66067;
-  font-size: 1.5rem;
-  margin:1rem 0 0 0;
+  font-size: 3rem;
+  margin:2rem 0;
 }
 
 /* ----------------------------- @top --------------------------------------- */
@@ -54,9 +69,9 @@ header#banner{
   position: fixed;
   top:0; left: 0;
   height: 150px;
-  width: 90%;
+  width: 100%;
   background-color: rgba(248,248,255, 0.80);
-  padding: 0 0rem 2rem 10%;
+  padding: 0 0rem 2rem 0;
   box-shadow: 0px 0px 3px 0 #aaa;
 }
 header#banner:after{
@@ -65,9 +80,8 @@ header#banner:after{
   height: 2px;
 }
 header#banner h1 {
-  font-size: 3rem;
-  margin-right: 4px;
-  margin-top: 0px;
+  font-size: 3.5rem;
+  margin:2rem 3rem ;
   text-align: left;
   color: #000;
 }
@@ -85,7 +99,7 @@ h1#afup a{
 }
 
 p#conf {
-  font-size: 2rem;
+  font-size: 2.5rem;
   position: absolute;
   right: 450px;
   top: 4px;
@@ -94,8 +108,9 @@ p#conf {
 
 /*navigation*/
 
-#navigation{
+#mainhead nav #navigation{
   margin-top: 45px;
+  padding-left: 20px;
 }
 #navigation li{
   list-style-type: none;
@@ -107,9 +122,8 @@ nav a {
   border-radius: 4rem;
   color: #335271;
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin: 0 0 4px;
   overflow: hidden;
   padding: 1rem 3rem;
   text-decoration: none;
@@ -132,16 +146,21 @@ div#main{
   width:960px;
   min-height: 500px;
 }
+#mainhead,
+#mainfoot {
+  width:960px;
+  margin: auto;
+}
 
 section.post{
-  width: 65%;
+  width: 75%;
   display: inline-block;
   padding: 1px 0;
 
 }
 
 .news{
-  width:70%;
+  width:100%;
 }
 .news form,
 .commenTitle {
@@ -170,13 +189,13 @@ h3.date {
   display: inline-block;
   font-weight: bold;
   margin: 0 auto 1rem;
-  padding: 5px 6px;
+  padding: 1rem 2rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   transform: skew(-9deg) rotate(-1deg);
   z-index: -1;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
 }
 
 img.left{
@@ -202,7 +221,7 @@ p.abstract{
   padding: 1px 0;
   top: 182px; right: 0;
   position: fixed;
-  z-index:-1;
+  z-index:1;
 }
 #sidebar figure{
   width:40%;

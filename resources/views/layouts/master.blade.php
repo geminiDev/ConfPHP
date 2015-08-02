@@ -16,14 +16,16 @@
     <link rel="stylesheet" href="/assets/css/app.min.css">
 </head>
 <body>
+@include('blog.includes.header')
 <div id="main" role="main">
-
-    @include('blog.includes.header')
     @yield('content')
     @include('blog.includes.aside')
-    @include('blog.includes.footer')
 
 </div>
+
+@include('blog.includes.footer')
+
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ class MailController extends Controller
 {
 
     public function createToMail(){
-        return view('email.index');
+        return view('blog.contact');
     }
 
     public function sendToMail(MailRequest $request){

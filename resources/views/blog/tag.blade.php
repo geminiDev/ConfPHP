@@ -3,8 +3,7 @@
     <section class="post">
         <article class="news">
             @if($posts)
-
-                <h2 class="link-post">Les conférences du mot clef :{{$name}}</h2>
+                <h2>Tags : {{ucfirst($name)}}</h2>
                 @foreach($posts as $post)
                     <h3>{{$post->title}}</h3>
                     <img class="left" src="/img/update/{{$post->thumbnail_link}}" alt=""/>
@@ -16,7 +15,7 @@
                     </div>
                     <span class="link-keyword"><strong>Mots clefs :</strong>
                         @foreach($post->tags as $tag)
-                            <a href="{{url('tag/'.$tag->id)}}">{{$tag->name}}</a>
+                            <a href="{{url('tag/'.$tag->id)}}">{{ucfirst($tag->name)}}</a>
                         @endforeach
                         </span>
                     <div class="dateConf">
@@ -26,7 +25,4 @@
             @endif
         </article>
     </section>
-
-    </section>
-
 @endsection

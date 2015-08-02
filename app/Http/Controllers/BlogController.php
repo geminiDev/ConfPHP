@@ -35,7 +35,7 @@ class BlogController extends Controller
         return view('Blog.notices');
     }
     public function aboutPage(){
-        return view('Blog.notices');
+        return view('Blog.about');
     }
 
 }

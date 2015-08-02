@@ -1,9 +1,9 @@
 @extends('layouts.master')
 @section('content')
-    <article>
-        <div>
+    <section class="post">
+        <div class="news">
 
-            <h2>A Propo :</h2>
+            <h2>Les mentions légales </h2>
             <section>
                 <h3>1. Présentation du site.</h3>
 
@@ -199,5 +199,5 @@
                 78-17 du 6 janvier 1978).</p>
             </section>
         </div>
-    </article>
+    </section>
 @endsection

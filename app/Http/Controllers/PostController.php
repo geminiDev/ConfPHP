@@ -8,6 +8,7 @@ use Faker\Provider\Image;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\PostRequest;
 use App\Http\Requests\StatusRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;

@@ -1,14 +1,15 @@
 @extends('layouts.master')
 @section('content')
-    <section id="post">
+    <section class="post">
 
         @if($posts)
             @foreach($posts as $post)
                 <article class="news">
-                    <h2 class="link-post"><a href="{{url('/single/'.$post->id)}}">{{$post->title}}</a></h2>
-                    <img class="left" src="/img/update/{{$post->thumbnail_link}}" alt=""/>
+                    <h2><a class="link-post" href="{{url('/single/'.$post->id)}}">{{$post->title}}</a></h2>
 
                     <div class="excerpt">
+                        <img class="left" src="/img/update/{{$post->thumbnail_link}}" alt=""/>
+
                         <p class="abstract">{{$post->excerpt}}</p>
 
                         <p><a class="link" href="{{url('/single/'.$post->id)}}">Lire la suite...</a></p>
@@ -29,6 +30,5 @@
                 </article>
             @endforeach
         @endif
-
     </section>
 @endsection

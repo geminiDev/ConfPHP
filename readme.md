@@ -1,4 +1,17 @@
-## Laravel PHP Framework
+## Bienvenu sur mon Projet 2 Laravel
+
+## Dans un 1er temps, je vais vous demander  de d'installer mon projet sur votre ordinateur
+
+## C'est très simple, je vous invite ouvrir le terminal
+## Allez à la racine du projet que vous avez installé ensuite
+## Vous aller ensuite taper dans votre terminal la commande suivante :
+[![sh install.sh] ()]
+
+Cette commande va installer le framework Laravel 5.1, la base de donnée Mysql, va créer un utilisateur 'admin' et les dépendances attachés au projet.
+
+Veu
+
+
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
