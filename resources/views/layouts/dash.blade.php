@@ -35,12 +35,6 @@
             <li class="dropdown">
                 <a href="{{url('/admin')}}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-comments"></i> <b
-                            class="caret"></b>En Attentes</a>
-                <ul class="dropdown-menu message-dropdown">
-
-                </ul>
             <li class="dropdown"><a href="/"><i class="fa fa-fw fa-chevron-circle-left"></i> Retour au site</a></li>
             <li class="dropdown"><a href="{{url('auth/logout')}}">Deconnexion</a></li>
             </li>

@@ -14,17 +14,17 @@
                 <h2>Créer votre post :</h2>
                 {!! Form::open(['url'=>'post/'.$post->id, 'files'=>true]) !!}
                 {!! Form::hidden('_method','put')!!}
-                <div>
+                <div class="form-containe">
                     {!! Form::label('title', 'Titre :',['for'=> 'title']) !!}<br/>
                     {!! Form::text('title', $post->title ,['id'=>'title','class'=>'form-control','required']) !!}
                     {{ $errors->first('title', '<span class="help-block">:message</span>') }}
                 </div>
-                <div>
+                <div class="form-containe">
                     {!!Form::label('content', 'Article : ')!!}<br/>
                     {!!Form::textarea('content',$post->content, ['cols'=>70, 'rows'=>10, 'class'=>'form-control'])!!}
                     {{ $errors->first('content', '<span class="help-block">:message</span>') }}
                 </div>
-                <div>
+                <div class="form-containe">
                     {!! Form::label('date_start', 'Date de début :',['for'=> 'date_start']) !!}{!!
                     Form::text('date_start',$post->date_start,['class'=>'form-control', 'id'=>'date_start', 'required'])
                     !!}<br/>
@@ -32,12 +32,12 @@
                     Form::text('date_end',$post->date_end,['class'=>'form-control', 'id'=>'date_end', 'required'])
                     !!}<br/>
                 </div>
-                <fieldset class="form-control-static">
+                <fieldset class="form-containe">
                     {!! MyHtml::thumb('mon image',['name'=>'thumbnail_link','formats'=>'jpeg,png,jpg','sizes'=>'2Mo'])
                     !!}
                 </fieldset>
 
-                <div>
+                <div class="form-containe">
                     <strong>Choisissez le statut de votre post :</strong>
                     @if($post->status == 'publish')
                         {!! MyHtml::radio('status',['value'=>'publish','title'=>'publier','checked'])!!}
@@ -47,24 +47,24 @@
                         {!!MyHtml::radio('status',['value'=>'unpublish','title'=>'dépublier','checked'])!!}
                     @endif
                 </div>
-                <div class="form-control-static">
+                <div class="form-containe">
                     <strong>Tags de l'article :</strong>
                     <ul>
-
                         @foreach($tags as $tag)
                             @if(in_array($tag->id, $post->displayTags()))
-                                {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
-                                {!!Form::checkbox('tag_id[]', $tag->id,['title'=> $tag->name])!!}
+                                <ul>
+                                    {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
+                                    {!!Form::checkbox('tag_id[]', $tag->id,['title'=> $tag->name])!!}
+                                </ul>
                             @else
-                                {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
-                                {!!Form::checkbox('tag_id[]', $tag->id,false,['title'=> $tag->name])!!}
+                                <ul>
+                                    {!!Form::label('tag_id',ucfirst($tag->name), ['title'=> $tag->name])!!}
+                                    {!!Form::checkbox('tag_id[]', $tag->id,false,['title'=> $tag->name])!!}
+                                </ul>
                             @endif
                         @endforeach
                     </ul>
                 </div>
-
-
-
                 <p>{!! Form::submit('Valider', ['class'=>'btn btn-primary btn-lg']) !!}</p>
                 {!! Form::close() !!}
             @endif

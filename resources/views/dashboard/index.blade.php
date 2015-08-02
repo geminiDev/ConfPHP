@@ -55,6 +55,9 @@
                 @endforeach
                 </tbody>
             </table>
+            <nav class="navigation">
+                {!! $posts->render() !!}
+            </nav>
         </div>
     </section>
 @endsection

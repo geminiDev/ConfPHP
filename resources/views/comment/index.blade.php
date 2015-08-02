@@ -40,5 +40,9 @@
             @endforeach
             </tbody>
         </table>
+
+        <nav class="navigation">
+            {!! $comments->render() !!}
+        </nav>
     </div>
 @endsection

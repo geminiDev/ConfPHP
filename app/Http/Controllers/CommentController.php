@@ -33,7 +33,7 @@ class CommentController extends Controller
             'comments.message',
             'posts.title',
             'comments.status')
-            ->get();
+            ->paginate(3);
         return view('comment.index', compact('comments'));
     }
 

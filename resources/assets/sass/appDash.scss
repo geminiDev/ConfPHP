@@ -2,10 +2,16 @@ body {
   margin-top: 100px;
   background-color: #222;
 }
-.dash-page{
-  margin: 20rem 0;
+.form-containe{
+  margin: 1rem 0;
 }
+.form-containe ul li input:last-of-type {
+  padding-left: 1rem;
 
+}
+.form-containe ul li{
+  list-style-type: none;
+}
 @media(min-width:768px) {
   body {
     margin-top: 50px;
