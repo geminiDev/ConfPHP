@@ -26,7 +26,7 @@ class CommentController extends Controller
 
     public function index()
     {
-        $comments = Comment::join('posts', 'post_id', '=', 'posts.id')
+        $comments = Comment::orderBy('comments.created_at','desc')->join('posts', 'post_id', '=', 'posts.id')
             ->select('comments.id',
             'comments.post_id',
                 'comments.email',
