@@ -1,5 +1,5 @@
 # Projet 2 - [ConfPHP]
----------------------------------------
+
 ## __Dans un premier temps :__
 
 * je vais vous demander  d'installer le projet.
