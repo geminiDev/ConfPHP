@@ -45,11 +45,10 @@
 
 <!----- SCRIPT PLUGINS ----->
 <script src="{{asset('assets/js/vendor/jquery-1.11.3.min.js')}}"></script>
-<script src="{{asset('assets/js/vendor/boostrap.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor/bootstrap.min.js')}}"></script>
 @yield('script')
 
 <!----- SCRIPT Perso ----->
-<script src="{{asset('assets/js/plugins.min.js')}}"></script>
 <script src="{{asset('assets/js/main.min.js')}}"></script>
 
 </body>

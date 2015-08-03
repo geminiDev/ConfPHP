@@ -1,8 +1,6 @@
 /vendor
 /node_modules
 Homestead.yaml
-.env
 .env.example
-install.sh
 install.php
 _ide_helper.php

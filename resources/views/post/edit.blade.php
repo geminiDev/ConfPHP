@@ -76,4 +76,5 @@
 @endsection
 @section('script')
     <script src="{{asset('assets/js/vendor/jquery.datetimepicker.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins.min.js')}}"></script>
 @endsection
