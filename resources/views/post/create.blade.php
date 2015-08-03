@@ -33,11 +33,10 @@
                     Form::text('date_end','',['class'=>'form-control', 'id'=>'date_end', 'placeholder'=>'Choisissez
                     votre date', 'required']) !!}<br/>
                 </div>
-                <fieldset class="form-containe">
+                <div class="form-containe">
                     {!! MyHtml::thumb('mon image',['name'=>'thumbnail_link','formats'=>'jpeg,png,jpg','sizes'=>'2Mo'])
                     !!}
-                </fieldset>
-
+                </div>
                 <div class="form-containe">
                     <strong>Choisissez le statut de votre post :</strong>
                     {!! MyHtml::radio('status',['value'=>'publish','title'=>'publier'])!!}

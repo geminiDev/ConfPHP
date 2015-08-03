@@ -152,6 +152,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         App\Providers\MyHtmlServiceProvider::class,
+        App\Providers\MyCaptchatServiceProvider::class,
         #Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         // Beug
 
@@ -212,6 +213,10 @@ return [
             MyHtml
         \*-----------------------------------------------------------*/
         'MyHtml' => App\Facades\MyHtml::class,
+        /*-----------------------------------------------------------*\
+           Captchat
+        \*-----------------------------------------------------------*/
+        'MyCaptchat'=>App\Facades\MyCaptchat::class,
         /*-----------------------------------------------------------*\
             SwiftMail
         \*-----------------------------------------------------------*/

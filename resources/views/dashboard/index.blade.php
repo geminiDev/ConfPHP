@@ -43,7 +43,7 @@
                             <td>
                                 {!! Form::open(['url'=>'post/'.$post->id]) !!}
                                 {!! Form::hidden('_method','DELETE')!!}
-                                {!! Form::submit('Supprimer', ['class'=>'btn btn-danger']) !!}
+                                {!! Form::submit('Supprimer', ['class'=>'btn btn-danger', 'id'=>'myModal']) !!}
                                 {!! Form::close()!!}
                             </td>
                         </tr>

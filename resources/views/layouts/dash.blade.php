@@ -42,6 +42,7 @@
     </div>
 </div>
 
+
 <!----- SCRIPT PLUGINS ----->
 <script src="{{asset('assets/js/vendor/jquery-1.11.3.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/boostrap.min.js')}}"></script>
