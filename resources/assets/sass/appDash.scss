@@ -38,10 +38,16 @@ body {
     padding-left: 225px;
   }
 
+  #Primary {
+    padding: 10px;
+
+  }
   #page-wrapper {
     padding: 10px;
-    height: 70rem;
-    overflow: scroll;
+  }
+  .dash-page{
+    margin-top: 5rem;
+    margin-bottom: 40rem;
   }
 }
 

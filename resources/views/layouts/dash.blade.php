@@ -28,11 +28,11 @@
 @include('dashboard.partials.menu')
     <div id="page-wrapper">
 
-        <div class="container-fluid">
+                    <div class="container-fluid">
 
-            <!-- Page Heading -->
-            <div class="row">
-                <div class="col-lg-12">
+                        <!-- Page Heading -->
+                        <div class="row">
+                            <div class="col-lg-12">
                     @yield('content')
                 </div>
             </div>

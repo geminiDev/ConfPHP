@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <section>
+    <section class="dash-page">
         <div>
 
             @if(!isset($_POST))

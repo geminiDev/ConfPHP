@@ -1,5 +1,7 @@
 @extends('layouts.dash')
 @section('content')
+
+
     <section class="dash-page">
         <h1>Dashboard</h1>
 
