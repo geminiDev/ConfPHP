@@ -26,7 +26,7 @@ class MailRequest extends Request
         return [
             'email'=>'required|email',
             'message'=>'required',
-            //'captcha'=>'required',
+            'captcha'=>'required',
         ];
     }
 }

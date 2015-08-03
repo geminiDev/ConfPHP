@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use App\Helpers\MyCaptchat;
 use Illuminate\Support\ServiceProvider;
 
 class MyCaptchatServiceProvider extends ServiceProvider
