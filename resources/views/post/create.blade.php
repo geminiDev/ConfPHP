@@ -38,6 +38,9 @@
                     !!}
                 </div>
                 <div class="form-containe">
+                    {!! MyHtml::link('Lien du site de la conférence',['name'=>'url_site', 'class'=>'form-control'])!!}
+                </div>
+                <div class="form-containe">
                     <strong>Choisissez le statut de votre post :</strong>
                     {!! MyHtml::radio('status',['value'=>'publish','title'=>'publier'])!!}
                     {!!MyHtml::radio('status',['value'=>'unpublish','title'=>'dépublier','checked'])!!}

@@ -16,7 +16,7 @@ class MailController extends Controller
     public function createToMail(){
         $numberOne = rand(1,10);
         $numberTwo = rand(1,10);
-        $question = $numberOne.' + '.$numberTwo;
+        $question = 'Calculer la somme '.$numberOne.' + '.$numberTwo;
         $reponse = $numberOne + $numberTwo;
 
         //dd($question.'/'.$reponse);

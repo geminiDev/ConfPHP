@@ -32,10 +32,13 @@
                     Form::text('date_end',$post->date_end,['class'=>'form-control', 'id'=>'date_end', 'required'])
                     !!}<br/>
                 </div>
-                <fieldset class="form-containe">
+                <div class="form-containe">
                     {!! MyHtml::thumb('mon image',['name'=>'thumbnail_link','formats'=>'jpeg,png,jpg','sizes'=>'2Mo'])
                     !!}
-                </fieldset>
+                </div>
+                <div class="form-containe">
+                    {!! MyHtml::link('Lien du site de la conférence',['name'=>'url_site', 'class'=>'form-control', 'value'=> $post->url_site])!!}
+                </div>
 
                 <div class="form-containe">
                     <strong>Choisissez le statut de votre post :</strong>

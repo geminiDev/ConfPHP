@@ -38,6 +38,7 @@ class MyHtml
     {
         $attrs = "";
         $name = "";
+        $title = ucfirst($title);
         if ($args) {
             foreach ($args as $key => $values) {
                 if ($key == 'name') {
@@ -47,7 +48,7 @@ class MyHtml
             }
         }
         if ($label) {
-            return "<label for=\"$name\">ucfirst($title)</label><input type=\"text\" id=\"$name\" $attrs placeholder=\"ex : http://www.confphp.fr\" /> ";
+            return "<label for=\"$name\">$title : </label><input type=\"text\" id=\"$name\" $attrs placeholder=\"ex : http://www.confphp.fr\" /> ";
         }
         return "<input type=\"text\" id=\"$name\" name=\"$name\" $attrs placeholder=\"ex : http://www.confphp.fr\" />";
     }

@@ -14,7 +14,7 @@
 
                         <p><a class="link" href="{{url('/single/'.$post->id)}}">Lire la suite...</a></p>
 
-                        <p><a class="link-outside" href="{{$post->url_site}}">Site web de la conférence</a></p>
+                        <p><a class="link-outside" href="{{url($post->url_site)}}">Site web de la conférence</a></p>
                     </div>
                     <div class="link-keyword"><strong>Tags :</strong>
                         @foreach($post->tags as $tag)
