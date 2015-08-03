@@ -1,5 +1,6 @@
-## Bienvenu sur mon Projet ConfPHP
+# Bienvenu sur mon Projet ConfPHP
+====================================================
 
-Dans un 1er temps, je vais vous demander  de l'installer
-
-## Vous trouverez ensuite le fichier install.sh
+## __Dans un premier temps :__
+*je vais vous demander  d'installer le projet.
+*Vous utiliserez ensuite le fichier install.sh pour installer toutes les dépendances.
