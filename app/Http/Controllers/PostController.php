@@ -47,7 +47,7 @@ class PostController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         $args = ['slug' => str_slug($request['title']),
             'excerpt' => substr($request['content'], 0, 255),
@@ -104,7 +104,7 @@ class PostController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
         $args = ['slug' => str_slug($request['title']),
             'excerpt' => substr($request['content'], 0, 255),

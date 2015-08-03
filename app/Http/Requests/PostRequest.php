@@ -31,8 +31,6 @@ class PostRequest extends Request
             'date_end'=>'required',
             'link_thumbnail'=>'mimes:jpeg,png,jpg',
             'size'=>'2000',
-            'url_site'=>'required',
-            'tag_id'=>'required',
         ];
     }
 }
