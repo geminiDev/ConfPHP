@@ -2,6 +2,7 @@
 @section('content')
     <div class="table-responsive">
         <section class="dash-page">
+            <p>{{Session::get('message')}}</p>
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>

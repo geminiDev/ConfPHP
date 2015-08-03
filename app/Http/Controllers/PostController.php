@@ -72,7 +72,7 @@ class PostController extends Controller
             $post->thumbnail_link = $fileName;
             $post->save();
         }
-        return redirect()->to('post')->with('message', 'success update');
+        return redirect()->to('post')->with('message', 'Votre post est bien créé');
     }
 
     /**
@@ -137,7 +137,7 @@ class PostController extends Controller
             $post->save();
         }
 
-        return redirect()->to('post')->with('message', 'success update');
+        return redirect()->to('post')->with('message', 'Mise à jour effectué');
     }
 
     /**
@@ -150,13 +150,13 @@ class PostController extends Controller
     {
         Post::destroy($id);
 
-        return redirect()->to('post')->with('message', 'success');
+        return redirect()->to('post')->with('message', 'Post supprimé avec succès');
     }
 
     public function changeToStatus(StatusRequest $request, $id)
     {
         Post::find($id)->update($request->all());
 
-        return redirect()->to('post')->with('message', 'success update');
+        return redirect()->to('post')->with('message', 'Changement de statut effectué');
     }
 }

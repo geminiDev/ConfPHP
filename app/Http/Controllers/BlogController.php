@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Comment;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use YOzaz\LaravelSwiftmailer\Mailer;
 
 
@@ -21,9 +22,10 @@ class BlogController extends Controller
 
         return view('blog.index', compact('posts', 'comments','tags'));
     }
-    public function showPost($id){
+    public function showPost($id, $slug =''){
         $posts = Post::find($id);
         $comments = Post::find($id)->comments->where('comments.id','publish');
+        Session::put(['id'=>$id, 'slug'=> $posts->slug]);
 
         return view('Blog.single', compact('posts','comments'));
     }

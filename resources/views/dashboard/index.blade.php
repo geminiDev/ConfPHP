@@ -5,6 +5,7 @@
     <section class="dash-page">
         <h1>Dashboard</h1>
         <div class="table-responsive">
+            <p>{{Session::get('message')}}</p>
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>

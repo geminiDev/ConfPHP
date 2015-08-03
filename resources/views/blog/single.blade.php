@@ -26,6 +26,7 @@
     <section class="post">
         <div class="news">
             <h3 class="commenTitle">Laisser un commentaire</h3>
+            <p>{{Session::get('message')}}</p>
             {!! Form::open(['url'=>'comment'])!!}
             <div class="form-group">
                 {!!Form::label('email', 'Email(*):',['for'=> 'email'])!!}<br/>

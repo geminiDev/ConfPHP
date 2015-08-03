@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <section class="post">
-
+        <p>{{Session::get('message')}}</p>
         @if($posts)
             @foreach($posts as $post)
                 <article class="news">

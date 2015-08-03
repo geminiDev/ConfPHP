@@ -10,6 +10,7 @@ use App\Http\Requests\CommentRequest;
 use App\Http\Requests\StatusRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class CommentController extends Controller
 {
@@ -55,6 +56,9 @@ class CommentController extends Controller
      */
     public function store(CommentRequest $request)
     {
+        $id = Session::get('id');
+        $slug = Session::get('slug');
+
         Comment::create($request->all());
         $email = $request->input('email');
         $comment = $request->input('message');
@@ -65,7 +69,7 @@ class CommentController extends Controller
                 ->subject('ConfPHP - Notification commentaire')
                 ->from($email);
         });
-        return redirect('/')->with('message', 'Email envoyé');
+        return redirect('single/'.$id.'/'.$slug)->with('message', 'Votre commentaire a bien été pris en compte, il est attente de validation.');
     }
 
     /**
@@ -100,7 +104,7 @@ class CommentController extends Controller
     public function update(StatusRequest $request, $id)
     {
         Comment::find($id)->update($request->all());
-        return redirect()->to('comment')->with('message', 'success update');
+        return redirect()->to('comment')->with('message', 'Changement de statut effectué');
     }
 
     /**
@@ -112,6 +116,6 @@ class CommentController extends Controller
     public function destroy($id)
     {
         Comment::destroy($id);
-        return redirect()->to('comment')->with('message', 'success');
+        return redirect()->to('comment')->with('message', 'Commentaire supprimé');
     }
 }
