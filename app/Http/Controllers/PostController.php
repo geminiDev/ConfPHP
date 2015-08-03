@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(10);
+        $posts = Post::paginate(8);
         $tags = Tag::all();
         return view('dashboard.index', compact('posts', 'tags'));
     }
