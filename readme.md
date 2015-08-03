@@ -2,5 +2,5 @@
 
 ## __Dans un premier temps :__
 
-* je vais vous demander  d'installer le projet.
-* Vous utiliserez ensuite le fichier install.sh pour installer toutes les dépendances.
+* Installer le projet
+* Utiliser le fichier install.sh
