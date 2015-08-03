@@ -5,7 +5,8 @@
         @if($posts)
             @foreach($posts as $post)
                 <article class="news">
-                    <h2><a class="link-post" href="{{url('/single/'.$post->id.'/'.$post->slug)}}">{{$post->title}}</a></h2>
+                    <h2><a class="link-post" href="{{url('/single/'.$post->id.'/'.$post->slug)}}">{{$post->title}}</a>
+                    </h2>
 
                     <div class="excerpt">
                         <img class="left" src="/img/update/{{$post->thumbnail_link}}" alt=""/>
@@ -30,5 +31,6 @@
                 </article>
             @endforeach
         @endif
+
     </section>
 @endsection

@@ -4,7 +4,6 @@
 
     <section class="dash-page">
         <h1>Dashboard</h1>
-
         <div class="table-responsive">
             <table class="table table-hover table-bordered">
                 <thead>
@@ -52,9 +51,6 @@
                         @endforeach
                 </tbody>
             </table>
-            <nav class="navigation">
-                {!! $posts->render() !!}
-            </nav>
         </div>
     </section>
 @endsection
