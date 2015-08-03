@@ -19,7 +19,7 @@ Route::pattern('id', '[1-9][0-9]*');
 \*-----------------------------------------------------------*/
 
 Route::get('/', 'BlogController@index');
-Route::get('single/{id}', 'BlogController@showPost');
+Route::get('single/{id}/{slug?}', 'BlogController@showPost');
 Route::get('tag/{id}', 'BlogController@showPostByTag');
 Route::get('mentions', 'BlogController@noticesPage');
 Route::get('about', 'BlogController@aboutPage');

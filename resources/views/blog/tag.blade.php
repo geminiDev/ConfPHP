@@ -5,7 +5,7 @@
             @if($posts)
                 <h2>Tags : {{ucfirst($name)}}</h2>
                 @foreach($posts as $post)
-                    <h3>{{$post->title}}</h3>
+                    <h3><a href="{{url('/single/'.$post->id.'/'.$post->slug)}}">{{$post->title}}</a></h3>
                     <img class="left" src="/img/update/{{$post->thumbnail_link}}" alt=""/>
 
                     <div class="excerpt">

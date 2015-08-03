@@ -5,14 +5,14 @@
         @if($posts)
             @foreach($posts as $post)
                 <article class="news">
-                    <h2><a class="link-post" href="{{url('/single/'.$post->id)}}">{{$post->title}}</a></h2>
+                    <h2><a class="link-post" href="{{url('/single/'.$post->id.'/'.$post->slug)}}">{{$post->title}}</a></h2>
 
                     <div class="excerpt">
                         <img class="left" src="/img/update/{{$post->thumbnail_link}}" alt=""/>
 
                         <p class="abstract">{{$post->excerpt}}</p>
 
-                        <p><a class="link" href="{{url('/single/'.$post->id)}}">Lire la suite...</a></p>
+                        <p><a class="link" href="{{url('/single/'.$post->id.'/'.$post->slug)}}">Lire la suite...</a></p>
 
                         <p><a class="link-outside" href="{{url($post->url_site)}}">Site web de la conférence</a></p>
                     </div>
