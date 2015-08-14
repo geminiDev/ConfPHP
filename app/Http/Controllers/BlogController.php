@@ -24,7 +24,7 @@ class BlogController extends Controller
     }
     public function showPost($id, $slug =''){
         $posts = Post::find($id);
-        $comments = Post::find($id)->comments->where('comments.id','publish');
+        $comments = $posts->comments->where('status', 'publish');
         Session::put(['id'=>$id, 'slug'=> $posts->slug]);
 
         return view('Blog.single', compact('posts','comments'));
